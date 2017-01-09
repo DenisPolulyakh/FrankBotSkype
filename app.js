@@ -37,7 +37,7 @@ intents.matches(/^список валют/i, [
 
 ]);
 
-intents.matches(/где Дима?/i, [
+intents.matches(/где Дима\?/i, [
     function (session) {
         session.beginDialog('/wheredima');
 
@@ -45,7 +45,7 @@ intents.matches(/где Дима?/i, [
 
 ]);
 
-intents.matches(/ты кто?/i, [
+intents.matches(/ты кто\?/i, [
     function (session) {
         session.beginDialog('/hello');
 
@@ -254,7 +254,9 @@ bot.dialog('/pussy', [
 
 bot.dialog('/wheredima', [
     function (session) {
-      session.send("Дима работает, в отличии от тебя!:)");
+      var dima = ["Дима работает, в отличии от тебя!:)", "Дима, разговариват по телефону", "Дима менеджер, он занят", "Дима паркуется", "Дима пишет бота не мешай ему",";)"];
+      var i=Math.floor(Math.random() * (arr.length-1));
+      session.send(dima[i]);
       session.endDialog();
     }
 
