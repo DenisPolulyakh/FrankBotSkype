@@ -45,7 +45,18 @@ intents.matches(/где Дима\?/i, [
 
 ]);
 
-intents.matches(/ты кто\?/i, [
+
+
+
+intents.matches(/где Инна\?/i, [
+    function (session) {
+        session.beginDialog('/whereinna');
+
+    }
+
+]);
+
+intents.matches(/ты кто\?./i, [
     function (session) {
         session.beginDialog('/hello');
 
@@ -254,9 +265,20 @@ bot.dialog('/pussy', [
 
 bot.dialog('/wheredima', [
     function (session) {
-      var dima = ["Дима работает, в отличии от тебя!:)", "Дима, разговариват по телефону", "Дима менеджер, он занят", "Дима паркуется", "Дима пишет бота не мешай ему",";)"];
+      var dima = ["Дима работает, в отличии от тебя!:)","Дима нашел баг, он доволен собой","Дима смотрит таблицу в Excel", "Дима, разговариват по телефону", "Дима менеджер, он занят", "Дима паркуется", "Дима пишет бота не мешай ему",";)"];
       var i=Math.floor(Math.random() * (dima.length-1));
       session.send(dima[i]);
+      session.endDialog();
+    }
+
+      
+]);
+
+bot.dialog('/wherinna', [
+    function (session) {
+      var inna = ["Инна в баре:)","Инна работает, бери с неё пример :) ","Инна на собеседовании", "Инна гуляет с красавчиком", "Инна тестирует что-то, правда не говорит что ;)", "Инна пошла на рынок за 4 котом :)", "Инна читает табличку, отдам в добрые руки котёнка:)","Инна гуляет с красавчиком","Инна играет в кикер","Инна отмечает релиз","Инна переписывается с Ашитковым",";)"];
+      var i=Math.floor(Math.random() * (inna.length-1));
+      session.send(inna[i]);
       session.endDialog();
     }
 
