@@ -255,7 +255,7 @@ bot.dialog('/pussy', [
 bot.dialog('/wheredima', [
     function (session) {
       var dima = ["Дима работает, в отличии от тебя!:)", "Дима, разговариват по телефону", "Дима менеджер, он занят", "Дима паркуется", "Дима пишет бота не мешай ему",";)"];
-      var i=Math.floor(Math.random() * (arr.length-1));
+      var i=Math.floor(Math.random() * (dima.length-1));
       session.send(dima[i]);
       session.endDialog();
     }
