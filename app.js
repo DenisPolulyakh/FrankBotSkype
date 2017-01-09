@@ -37,6 +37,21 @@ intents.matches(/^список валют/i, [
 
 ]);
 
+intents.matches(/где Дима?/i, [
+    function (session) {
+        session.beginDialog('/wheredima');
+
+    }
+
+]);
+
+intents.matches(/ты кто?/i, [
+    function (session) {
+        session.beginDialog('/hello');
+
+    }
+
+]);
 
 intents.matches(/^курс USD/i, [
     function (session) {
@@ -231,6 +246,15 @@ bot.dialog('/hello', [
 bot.dialog('/pussy', [
     function (session) {
       session.send("Смотря в каком контексте здесь пизда :)");
+      session.endDialog();
+    }
+
+      
+]);
+
+bot.dialog('/wheredima', [
+    function (session) {
+      session.send("Дима работает, в отличии от тебя!:)");
       session.endDialog();
     }
 
