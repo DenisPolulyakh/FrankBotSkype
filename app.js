@@ -126,8 +126,7 @@ bot.dialog('/request', [
         console.log(text);
         var messageToService = JSON.stringify({ text: text,timestamp:session.message.timestamp,address:session.message.address });
         console.log(messageToService);
-        var address = 'https://frankbotmindprogramming.herokuapp.com/botmind?message=' + encodeURIComponent(messageToService);
-        //var address = 'http://localhost:9999/FrankBotMind/botmind?message=' + encodeURIComponent(messageToService);
+        var address = 'https://cleverfrankbotmind.herokuapp.com/botmind?message=' + encodeURIComponent(messageToService);
         console.log(address);
         request.get(address, function (error, response, body) {
             if (!error && response.statusCode == 200) {
