@@ -143,8 +143,8 @@ bot.dialog('/request', [
         request.get(address, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var phrases = getJSONProperty(body, 'phrase');
-                session.send("Oh,yesss");
-                //botAnswer(session, phrases);
+                //session.send("Oh,yesss");
+                botAnswer(session, phrases);
             } else {
                 session.send("Повторите еще раз пожалуйста через 1 минуту");
             }
