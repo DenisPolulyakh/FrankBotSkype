@@ -101,7 +101,7 @@ function getJSONProperty(bodyJson, property) {
 function botAnswer(session, phrases) {
     console.log("Phrases: " + phrases);
     for (i = 0; i < phrases.length; i++) {
-        session.send(phrases[i]);
+        session.send(phrases[i],session.message.text);
     }
     return body.property;
 }
